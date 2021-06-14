@@ -6,13 +6,13 @@ function SearchBar(props) {
     handleFilter,
     ...moreProps
   } = props;
-
+  const [searchText, setSearchText] = React.useState("");
+  
   function handleChange(event) {
     setSearchText(event.target.value);
     handleFilter(event.target.value);
   }
 
-  const [searchText, setSearchText] = React.useState("");
   return (
    <form>
      <input type="text" value={searchText} placeholder="Search" onChange={handleChange}/>

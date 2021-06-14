@@ -33,6 +33,12 @@ function Main() {
       setFilteredMarvelData(newFilteredMarvelData);
     }
   }
+    
+  // Hook for when user selects a new page
+  React.useEffect(() => {
+    const offset = (currentPage) * itemsPerPage
+    setFilteredMarvelData(marvelData.slice(offset, offset+itemsPerPage));
+  }, [currentPage, marvelData])
 
   // only fetch the api upon mount
   React.useEffect(() => {
@@ -50,13 +56,7 @@ function Main() {
         console.warn(error);
       });
   }, [])
-
-  // Hook for when user selects a new page
-  React.useEffect(() => {
-    const offset = (currentPage) * itemsPerPage
-    setFilteredMarvelData(marvelData.slice(offset, offset+itemsPerPage));
-  }, [currentPage, marvelData])
-
+  
   return (
     <div className="main">
       <h1>Marvel Small App</h1>
