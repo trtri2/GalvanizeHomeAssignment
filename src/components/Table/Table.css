@@ -1,0 +1,33 @@
+.table-container {
+  height: 450px; 
+  overflow: auto;
+  position: relative;
+  border: 1px solid #d7d7d7;
+}
+
+table {
+ border-collapse: collapse;
+ width: 100%;
+}
+
+thead th { 
+ top: -1px;
+ position: sticky; 
+}
+
+th {
+ background: #EFEFEF;
+}
+
+td, th {
+ border: 1px solid #d7d7d7;
+ padding: 0.5rem;
+ text-align: left;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  border: 10px solid whitesmoke;
+}
+
